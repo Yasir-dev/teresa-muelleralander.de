@@ -342,7 +342,7 @@ footer {
 }
 
 /* ---- RESPONSIVE ---- */
-@media (max-width: 620px) {
+@media (max-width: 768px) {
   .hero-inner {
     flex-direction: column-reverse;
     align-items: center;
@@ -391,5 +391,27 @@ footer {
 
   nav a {
     font-size: 0.78rem;
+  }
+
+  /* Make the hero section center on small screens */
+  .hero-inner {
+    justify-content: center;
+  }
+
+  .hero-photo-outer {
+    width: 240px;
+    height: 240px;
+  }
+
+  /* Center contact box + button on small screens */
+  .contact-box {
+    margin: 0 auto;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .contact-box .email-link {
+    display: inline-block;
+    margin: 1.2rem auto 0;
   }
 }
