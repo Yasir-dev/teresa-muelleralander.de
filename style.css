@@ -1,0 +1,395 @@
+/* ============================================================
+   Teresa Müller-Alander — Freie Journalistin
+   Color Palette: Soft sage green + sky blue + warm white
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap");
+
+:root {
+  --sage: #7aaa8a;
+  --sage-light: #d4ead9;
+  --sage-pale: #eef5f0;
+  --sky: #6ba8c4;
+  --sky-light: #dceef6;
+  --sky-pale: #f0f8fc;
+  --ink: #2b2b2b;
+  --ink-soft: #555;
+  --white: #ffffff;
+  --cream: #f9faf7;
+  --radius: 12px;
+  --shadow: 0 4px 24px rgba(106, 168, 155, 0.15);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.75;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---- NAVIGATION ---- */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--sage-light);
+  padding: 0 2rem;
+}
+nav .nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0.8rem;
+  cursor: pointer;
+}
+
+nav .nav-toggle:focus-visible {
+  outline: 2px solid var(--sky);
+  outline-offset: 2px;
+}
+
+nav .hamburger {
+  width: 24px;
+  height: 2px;
+  display: block;
+  background: var(--ink-soft);
+  position: relative;
+}
+
+nav .hamburger::before,
+nav .hamburger::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--ink-soft);
+  left: 0;
+}
+
+nav .hamburger::before {
+  top: -8px;
+}
+
+nav .hamburger::after {
+  top: 8px;
+}
+
+nav .nav-list {
+  max-width: 900px;
+  margin: 0 auto;
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  min-height: 70px;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: var(--sage);
+}
+
+/* ---- HERO ---- */
+.hero {
+  background: linear-gradient(
+    135deg,
+    var(--sage-pale) 0%,
+    var(--sky-pale) 100%
+  );
+  padding: 5rem 2rem 4rem;
+}
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+.hero-text {
+  flex: 1;
+  min-width: 260px;
+}
+
+.hero-text h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+.hero-text .subtitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--sky);
+  letter-spacing: 0.03em;
+  margin-bottom: 1.6rem;
+}
+
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 2rem;
+}
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+.contact-list .icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--sage);
+}
+.contact-list a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.contact-list a:hover {
+  color: var(--sage);
+}
+
+/* ---- HERO PHOTO ---- */
+.hero-photo-wrap {
+  flex-shrink: 0;
+}
+.hero-photo-outer {
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  padding: 8px;
+  background: linear-gradient(135deg, var(--sage-light), var(--sky-light));
+  box-shadow: var(--shadow);
+}
+.hero-photo-outer img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* ---- SECTIONS ---- */
+section {
+  padding: 4rem 2rem;
+}
+section:nth-child(even) {
+  background: var(--white);
+}
+.section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.7rem;
+}
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: var(--sage);
+  border-radius: 2px;
+}
+p {
+  color: var(--ink-soft);
+  margin-bottom: 1rem;
+  max-width: 72ch;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- SKILLS GRID ---- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.skill-card {
+  background: var(--sage-pale);
+  border: 1px solid var(--sage-light);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.3rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--sage);
+  letter-spacing: 0.03em;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.skill-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* ---- CONTACT SECTION ---- */
+.contact-cta {
+  background: linear-gradient(135deg, var(--sage-pale), var(--sky-pale));
+}
+.contact-box {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  box-shadow: var(--shadow);
+  max-width: 520px;
+}
+.contact-box p {
+  font-size: 1.05rem;
+}
+.contact-box .email-link {
+  display: inline-block;
+  margin-top: 1.2rem;
+  background: var(--sage);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.7rem 1.8rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  transition:
+    background 0.2s,
+    transform 0.15s;
+}
+.contact-box .email-link:hover {
+  background: var(--sky);
+  transform: translateY(-1px);
+}
+
+/* ---- IMPRESSUM ---- */
+.impressum {
+  background: var(--cream);
+  border-top: 1px solid var(--sage-light);
+  padding: 3rem 2rem;
+}
+.impressum .section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.impressum h2 {
+  font-size: 1.3rem;
+}
+.impressum p,
+.impressum address {
+  font-size: 0.9rem;
+  font-style: normal;
+  color: var(--ink-soft);
+  margin-bottom: 0.3rem;
+}
+.impressum a {
+  color: var(--sage);
+}
+
+/* ---- FOOTER ---- */
+footer {
+  background: var(--sage-pale);
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: 1.2rem 2rem;
+  font-size: 0.82rem;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 620px) {
+  .hero-inner {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+  }
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .contact-list {
+    align-items: center;
+  }
+  h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  h2 {
+    text-align: center;
+  }
+  nav {
+    padding: 0 1.5rem;
+  }
+
+  nav .nav-toggle {
+    display: block;
+  }
+
+  nav .nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: auto;
+    padding: 0;
+    max-height: 0;
+    height: auto;
+    overflow: hidden;
+    transition:
+      max-height 0.25s ease,
+      padding 0.25s ease;
+  }
+
+  nav .nav-list.nav-list--open {
+    max-height: 999px;
+    padding: 1rem 1.5rem;
+  }
+
+  nav a {
+    font-size: 0.78rem;
+  }
+}
