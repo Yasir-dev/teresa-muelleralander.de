@@ -343,6 +343,14 @@ footer {
 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 768px) {
+  section {
+    padding: 1rem 2rem;
+  }
+
+  .hero {
+    padding: 1rem 2rem 1rem;
+  }
+
   .hero-inner {
     flex-direction: column-reverse;
     align-items: center;
@@ -363,7 +371,7 @@ footer {
     text-align: center;
   }
   nav {
-    padding: 0 1.5rem;
+    padding: 0.7rem 1.5rem;
   }
 
   nav .nav-toggle {
