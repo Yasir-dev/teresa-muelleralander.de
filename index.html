@@ -293,44 +293,6 @@
       ↑
     </button>
 
-    <script>
-      // Dynamically update the current year in the footer
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      // Mobile navigation toggle
-      const navToggle = document.querySelector(".nav-toggle");
-      const navList = document.querySelector(".nav-list");
-
-      navToggle?.addEventListener("click", () => {
-        const isOpen = navToggle.getAttribute("aria-expanded") === "true";
-        navToggle.setAttribute("aria-expanded", String(!isOpen));
-        navList?.classList.toggle("nav-list--open");
-      });
-
-      // Close navigation when a link is selected (mobile)
-      document.querySelectorAll(".nav-list a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navToggle?.setAttribute("aria-expanded", "false");
-          navList?.classList.remove("nav-list--open");
-        });
-      });
-
-      // Scroll-to-top button
-      const scrollTopBtn = document.getElementById("scroll-top");
-
-      const updateScrollTopVisibility = () => {
-        if (window.scrollY > 200) {
-          scrollTopBtn.classList.add("show");
-        } else {
-          scrollTopBtn.classList.remove("show");
-        }
-      };
-
-      window.addEventListener("scroll", updateScrollTopVisibility);
-
-      scrollTopBtn?.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>
